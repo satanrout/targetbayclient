@@ -23,7 +23,10 @@ const Form = () => {
         },
         body: JSON.stringify({ firstName, lastName, email }),
       };
-      const response = await fetch("http://localhost:5000/adduser", config);
+      const response = await fetch(
+        "https://targetbayapi.herokuapp.com/adduser",
+        config
+      );
       const data = await response.json();
       await dispatch(changedState());
       data.error ? setErrorMessage(data?.error) : setErrorMessage(null);
