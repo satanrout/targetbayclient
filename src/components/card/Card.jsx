@@ -14,22 +14,13 @@ const Card = ({ firstname, lastname, eMail, id, num }) => {
   const [lastName, setLastName] = useState(lastname);
   const [email, setEmail] = useState(eMail);
   const [swapNumber, setSwapNumber] = useState("");
-  // const [selectValue, setSelectValue] = useState(0);
-
-  // const { users } = useSelector((state) => state.user);
-  // console.log(
-  //   ([users[num], users[selectValue]] = [users[selectValue], users[num]])
-  // );
-  // console.log(num, selectValue);
-  // const swap = [...users];
-
   const deleteHandler = () => {
     dispatch(deleteUsers(id)).then(() => dispatch(changedState()));
   };
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
-      fetch(`http://localhost:5000/${id}`, {
+      fetch(`https://targetbayapi.herokuapp.com/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, lastName, email }),
@@ -50,14 +41,6 @@ const Card = ({ firstname, lastname, eMail, id, num }) => {
       setSwap([...swap]);
     }
   };
-
-  // const selectHandle = (e) => {
-  //   setSelectValue(e.target.value);
-  //   console.log(swap[num], "swapnum", swap[selectValue], "swapselectvalue");
-  //   console.log(
-  //     ([swap[num], swap[selectValue]] = [swap[selectValue], swap[num]])
-  //   );
-  // };
 
   return (
     <div className="card">

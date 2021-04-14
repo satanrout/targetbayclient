@@ -2,18 +2,17 @@ import React, { useContext, useEffect } from "react";
 import "./cardcontainer.css";
 import Card from "../card/Card";
 import { useSelector } from "react-redux";
-// import { fetchUsers } from "../../redux/userSlice";
 import { swapContext } from "../../context/swapContext";
 
 const CardContainer = () => {
-  // const dispatch = useDispatch();
-
-  // const { loading, users, error } = useSelector((state) => state.user);
   const { changed } = useSelector((state) => state.changed);
   const { swap, setSwap } = useContext(swapContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/", { method: "GET", mode: "cors" })
+    fetch("https://targetbayapi.herokuapp.com/", {
+      method: "GET",
+      mode: "cors",
+    })
       .then((response) => response.json())
       .then((data) => setSwap(data))
       .catch((err) => console.log(err));

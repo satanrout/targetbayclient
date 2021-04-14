@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const deleteUsers = createAsyncThunk("user/deleteUsers", async (id) => {
   try {
-    const response = await fetch(`http://localhost:5000/${id}`, {
+    const response = await fetch(`https://targetbayapi.herokuapp.com/${id}`, {
       method: "DELETE",
     });
     const data = await response.json();
