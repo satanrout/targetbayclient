@@ -1,0 +1,38 @@
+.card {
+  width: fit-content;
+  background-color: white;
+  border: 2px solid #c3cfd9;
+  padding: 10px;
+  min-width: 230px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 3;
+}
+
+.bottom input {
+  height: 35px;
+  border: 2px solid #c3cfd9;
+  border-radius: 5px;
+}
+
+.actions span {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.swap input {
+  width: 70px;
+}

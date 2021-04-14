@@ -1,0 +1,32 @@
+.form {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 150px;
+  margin: 40px auto;
+  background-color: #dfe6ed;
+  border: 2px dashed #9eadba;
+}
+
+.form input {
+  border: 2px solid #b8c4cf;
+}
+
+.form button {
+  background-color: #6558f5;
+  border: none;
+  color: white;
+}
+
+.form input,
+button {
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: #c3cfd9;
+}
