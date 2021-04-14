@@ -1,9 +1,14 @@
 .cardcontainer {
   display: grid;
-
   width: 1000px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   margin: 3rem auto;
   justify-items: center;
   gap: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .cardcontainer {
+    width: 100vw;
+  }
 }
